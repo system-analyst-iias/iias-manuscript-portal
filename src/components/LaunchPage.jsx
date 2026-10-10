@@ -217,32 +217,56 @@ export default function LaunchPage({ onLaunch }) {
           </p>
         </div>
 
-        {/* 5. Event Details (Date, Time, Venue) - Prominent and clearly visible */}
-        <div className="w-full max-w-3xl rounded-2xl bg-white/90 backdrop-blur-md border border-stone-300/80 shadow-md py-2.5 px-6 my-1.5 text-center">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-6 text-stone-900 text-xs sm:text-sm md:text-[15px] font-bold">
-            <div>
-              <span className="text-xs sm:text-sm uppercase tracking-wider text-amber-900 font-extrabold block sm:inline sm:mr-1.5" style={{ fontFamily: 'var(--font-cinzel)' }}>
+        {/* 5. Event Details (Date, Time, Venue) - Labels and values equal in font size */}
+        <div className="w-full max-w-4xl rounded-2xl bg-white/95 backdrop-blur-md border border-stone-300/80 shadow-md py-2.5 px-5 sm:px-8 my-1.5 text-center">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-6 text-stone-900">
+            <div className="flex items-center justify-center gap-1.5">
+              <span
+                className="text-xs sm:text-sm md:text-[14px] uppercase tracking-wider text-amber-900 font-extrabold shrink-0"
+                style={{ fontFamily: 'var(--font-cinzel)' }}
+              >
                 Date:
               </span>
-              <span className="text-stone-900 font-bold">11th October 2026</span>
+              <span
+                className="text-xs sm:text-sm md:text-[14px] text-stone-900 font-bold tracking-wide"
+                style={{ fontFamily: 'var(--font-cinzel)' }}
+              >
+                11th October 2026
+              </span>
             </div>
 
             <div className="hidden sm:block w-px h-5 bg-stone-300" />
 
-            <div>
-              <span className="text-xs sm:text-sm uppercase tracking-wider text-amber-900 font-extrabold block sm:inline sm:mr-1.5" style={{ fontFamily: 'var(--font-cinzel)' }}>
+            <div className="flex items-center justify-center gap-1.5">
+              <span
+                className="text-xs sm:text-sm md:text-[14px] uppercase tracking-wider text-amber-900 font-extrabold shrink-0"
+                style={{ fontFamily: 'var(--font-cinzel)' }}
+              >
                 Time:
               </span>
-              <span className="text-stone-900 font-bold">04:00 PM</span>
+              <span
+                className="text-xs sm:text-sm md:text-[14px] text-stone-900 font-bold tracking-wide"
+                style={{ fontFamily: 'var(--font-cinzel)' }}
+              >
+                04:00 PM
+              </span>
             </div>
 
             <div className="hidden sm:block w-px h-5 bg-stone-300" />
 
-            <div>
-              <span className="text-xs sm:text-sm uppercase tracking-wider text-amber-900 font-extrabold block sm:inline sm:mr-1.5" style={{ fontFamily: 'var(--font-cinzel)' }}>
+            <div className="flex items-center justify-center gap-1.5">
+              <span
+                className="text-xs sm:text-sm md:text-[14px] uppercase tracking-wider text-amber-900 font-extrabold shrink-0"
+                style={{ fontFamily: 'var(--font-cinzel)' }}
+              >
                 Venue:
               </span>
-              <span className="text-stone-900 font-bold">Seminar Room (Ground Floor), Main Building</span>
+              <span
+                className="text-xs sm:text-sm md:text-[14px] text-stone-900 font-bold tracking-wide"
+                style={{ fontFamily: 'var(--font-cinzel)' }}
+              >
+                Seminar Room (Ground Floor), Main Building
+              </span>
             </div>
           </div>
         </div>
