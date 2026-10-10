@@ -164,13 +164,13 @@ export default function LaunchPage({ onLaunch }) {
         {/* 3. Inaugurated By: Photo & Details of Prof. Reicha Tanwar */}
         <div className="flex flex-col items-center text-center my-1 max-w-2xl">
           <p
-            className="text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-amber-900 font-bold mb-1"
+            className="text-xs sm:text-sm tracking-[0.25em] uppercase text-amber-950 font-bold mb-1.5"
             style={{ fontFamily: 'var(--font-cinzel)' }}
           >
             Inaugurated By
           </p>
 
-          {/* Photo of Prof. Reicha Tanwar - 30% larger */}
+          {/* Photo of Prof. Reicha Tanwar */}
           <div className="w-[105px] h-[105px] sm:w-[115px] sm:h-[115px] md:w-[125px] md:h-[125px] rounded-full overflow-hidden border-[2.5px] border-amber-600/60 shadow-lg bg-stone-200 shrink-0 mb-2">
             <img
               src={`${import.meta.env.BASE_URL}prof-richa.png`}
@@ -180,13 +180,13 @@ export default function LaunchPage({ onLaunch }) {
           </div>
 
           <h3
-            className="text-sm sm:text-base md:text-lg font-bold text-stone-900 leading-tight"
+            className="text-base sm:text-xl md:text-2xl font-extrabold text-[#5c1010] tracking-wide leading-tight"
             style={{ fontFamily: 'var(--font-cinzel)' }}
           >
             Prof. Reicha Tanwar
           </h3>
           <p
-            className="text-[11px] sm:text-xs text-stone-700 leading-snug font-medium mt-0.5"
+            className="text-xs sm:text-sm md:text-base text-stone-800 leading-snug font-semibold mt-1 max-w-xl"
             style={{ fontFamily: 'var(--font-cormorant)' }}
           >
             Professor of Women’s Studies and the former Director of the Women’s Studies Research Centre
@@ -196,53 +196,53 @@ export default function LaunchPage({ onLaunch }) {
         </div>
 
         {/* 4. In the presence of Director: Prof. Himanshu Kumar Chaturvedi */}
-        <div className="flex flex-col items-center text-center my-0.5">
+        <div className="flex flex-col items-center text-center my-1">
           <p
-            className="text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-amber-900 font-bold mb-0.5"
+            className="text-xs sm:text-sm tracking-[0.25em] uppercase text-amber-950 font-bold mb-1"
             style={{ fontFamily: 'var(--font-cinzel)' }}
           >
             In the presence of
           </p>
           <p
-            className="text-xs sm:text-sm md:text-base font-bold text-stone-900 leading-tight"
+            className="text-sm sm:text-lg md:text-xl font-extrabold text-stone-900 leading-tight"
             style={{ fontFamily: 'var(--font-cinzel)' }}
           >
             Prof. Himanshu Kumar Chaturvedi
           </p>
           <p
-            className="text-[11px] sm:text-xs text-stone-600 font-medium"
+            className="text-xs sm:text-sm md:text-base text-stone-800 font-semibold mt-0.5"
             style={{ fontFamily: 'var(--font-cormorant)' }}
           >
             Director, Indian Institute of Advanced Study
           </p>
         </div>
 
-        {/* 5. Event Details (Date, Time, Venue) */}
-        <div className="w-full max-w-2xl rounded-xl bg-white/80 backdrop-blur-md border border-stone-200/80 shadow-sm py-2 px-4 my-1 text-center">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 text-stone-800 text-xs sm:text-sm font-semibold">
+        {/* 5. Event Details (Date, Time, Venue) - Prominent and clearly visible */}
+        <div className="w-full max-w-3xl rounded-2xl bg-white/90 backdrop-blur-md border border-stone-300/80 shadow-md py-2.5 px-6 my-1.5 text-center">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-6 text-stone-900 text-xs sm:text-sm md:text-[15px] font-bold">
             <div>
-              <span className="text-[10px] uppercase tracking-wider text-amber-900/80 font-bold block sm:inline sm:mr-1.5" style={{ fontFamily: 'var(--font-cinzel)' }}>
+              <span className="text-xs sm:text-sm uppercase tracking-wider text-amber-900 font-extrabold block sm:inline sm:mr-1.5" style={{ fontFamily: 'var(--font-cinzel)' }}>
                 Date:
               </span>
-              <span>11th October 2026</span>
+              <span className="text-stone-900 font-bold">11th October 2026</span>
             </div>
 
-            <div className="hidden sm:block w-px h-4 bg-stone-300" />
+            <div className="hidden sm:block w-px h-5 bg-stone-300" />
 
             <div>
-              <span className="text-[10px] uppercase tracking-wider text-amber-900/80 font-bold block sm:inline sm:mr-1.5" style={{ fontFamily: 'var(--font-cinzel)' }}>
+              <span className="text-xs sm:text-sm uppercase tracking-wider text-amber-900 font-extrabold block sm:inline sm:mr-1.5" style={{ fontFamily: 'var(--font-cinzel)' }}>
                 Time:
               </span>
-              <span>04:00 PM</span>
+              <span className="text-stone-900 font-bold">04:00 PM</span>
             </div>
 
-            <div className="hidden sm:block w-px h-4 bg-stone-300" />
+            <div className="hidden sm:block w-px h-5 bg-stone-300" />
 
             <div>
-              <span className="text-[10px] uppercase tracking-wider text-amber-900/80 font-bold block sm:inline sm:mr-1.5" style={{ fontFamily: 'var(--font-cinzel)' }}>
+              <span className="text-xs sm:text-sm uppercase tracking-wider text-amber-900 font-extrabold block sm:inline sm:mr-1.5" style={{ fontFamily: 'var(--font-cinzel)' }}>
                 Venue:
               </span>
-              <span>Seminar Room (Ground Floor), Main Building</span>
+              <span className="text-stone-900 font-bold">Seminar Room (Ground Floor), Main Building</span>
             </div>
           </div>
         </div>
