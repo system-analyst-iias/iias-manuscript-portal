@@ -1,0 +1,368 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold-50: #fdf8e8;
+  --color-gold-100: #f9efc5;
+  --color-gold-200: #f0dc8a;
+  --color-gold-300: #e5c44f;
+  --color-gold-400: #d4a928;
+  --color-gold-500: #c49a1a;
+  --color-gold-600: #a67c12;
+  --color-gold-700: #8a6310;
+  --color-gold-800: #6e4f0e;
+  --color-gold-900: #5a400c;
+
+  --color-maroon-50: #fdf2f2;
+  --color-maroon-100: #fbe1e1;
+  --color-maroon-200: #f8c8c8;
+  --color-maroon-300: #f2a3a3;
+  --color-maroon-400: #e87070;
+  --color-maroon-500: #d94545;
+  --color-maroon-600: #c42828;
+  --color-maroon-700: #a51e1e;
+  --color-maroon-800: #881c1c;
+  --color-maroon-900: #5c1212;
+  --color-maroon-950: #3a0808;
+
+  --color-heritage-bg: #1a0a0a;
+  --color-heritage-card: #2a1515;
+  --color-heritage-surface: #3a2020;
+
+  --font-cinzel: 'Cinzel', serif;
+  --font-cinzel-decorative: 'Cinzel Decorative', serif;
+  --font-cormorant: 'Cormorant Garamond', serif;
+}
+
+/* ───── Base Reset ───── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--color-heritage-bg);
+  color: #f5e6c8;
+  font-family: var(--font-cormorant);
+}
+
+/* ───── Curtain Styles (Darker Heritage) ───── */
+.curtain-container {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.curtain-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, #1a0505 0%, #050101 100%);
+}
+
+.curtain-left,
+.curtain-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  transition: transform 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.curtain-left {
+  left: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 35px,
+      rgba(0, 0, 0, 0.2) 35px,
+      rgba(0, 0, 0, 0.2) 37px,
+      transparent 37px,
+      transparent 70px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(80, 10, 10, 0.5) 0px,
+      rgba(50, 5, 5, 0.7) 18px,
+      rgba(80, 10, 10, 0.5) 36px
+    ),
+    linear-gradient(180deg,
+      #0a0202 0%,
+      #4a0e0e 3%,
+      #6b1111 8%,
+      #551010 15%,
+      #601212 20%,
+      #6b1111 30%,
+      #551010 45%,
+      #4a0e0e 55%,
+      #6b1111 65%,
+      #551010 75%,
+      #4a0e0e 85%,
+      #380a0a 95%,
+      #1a0404 100%
+    );
+  box-shadow: inset -25px 0 50px rgba(0, 0, 0, 0.7);
+  border-right: 3px solid rgba(180, 140, 30, 0.35);
+}
+
+.curtain-right {
+  right: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 35px,
+      rgba(0, 0, 0, 0.2) 35px,
+      rgba(0, 0, 0, 0.2) 37px,
+      transparent 37px,
+      transparent 70px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(80, 10, 10, 0.5) 0px,
+      rgba(50, 5, 5, 0.7) 18px,
+      rgba(80, 10, 10, 0.5) 36px
+    ),
+    linear-gradient(180deg,
+      #0a0202 0%,
+      #4a0e0e 3%,
+      #6b1111 8%,
+      #551010 15%,
+      #601212 20%,
+      #6b1111 30%,
+      #551010 45%,
+      #4a0e0e 55%,
+      #6b1111 65%,
+      #551010 75%,
+      #4a0e0e 85%,
+      #380a0a 95%,
+      #1a0404 100%
+    );
+  box-shadow: inset 25px 0 50px rgba(0, 0, 0, 0.7);
+  border-left: 3px solid rgba(180, 140, 30, 0.35);
+}
+
+/* Heritage fabric texture overlay */
+.curtain-left::before,
+.curtain-right::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 80px,
+      rgba(0,0,0,0.1) 80px,
+      rgba(0,0,0,0.1) 83px
+    ),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Gold tassel fringe at bottom */
+.curtain-left::after,
+.curtain-right::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #b08c1e 0px,
+      #b08c1e 2px,
+      transparent 2px,
+      transparent 6px
+    );
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6));
+  opacity: 0.8;
+}
+
+.curtain-left.open {
+  transform: translateX(-100%);
+}
+
+.curtain-right.open {
+  transform: translateX(100%);
+}
+
+/* Valance / Pelmet — darker heritage */
+.curtain-valance {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 55px;
+  z-index: 10;
+  background: linear-gradient(180deg,
+    #2a0606 0%,
+    #4a0e0e 30%,
+    #551010 60%,
+    #380a0a 100%
+  );
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  border-bottom: 3px solid #b08c1e;
+}
+
+/* Ornamental scallop along valance bottom */
+.curtain-valance::after {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  right: 0;
+  height: 16px;
+  background:
+    repeating-radial-gradient(circle at 10px 0, transparent 0, transparent 8px, rgba(176, 140, 30, 0.25) 8px, rgba(176, 140, 30, 0.25) 10px, transparent 10px) repeat-x;
+  background-size: 20px 16px;
+}
+
+/* Curtain container fade */
+.curtain-container.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease-out 0.5s;
+}
+
+/* ───── Gold Ornamental Divider ───── */
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.ornament-divider .line {
+  height: 1px;
+  width: 60px;
+  background: linear-gradient(90deg, transparent, #b08c1e, transparent);
+}
+
+.ornament-divider .diamond {
+  width: 7px;
+  height: 7px;
+  background: #b08c1e;
+  transform: rotate(45deg);
+  box-shadow: 0 0 6px rgba(176, 140, 30, 0.4);
+}
+
+/* ───── Floating Particles ───── */
+@keyframes float-particle {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: #b08c1e;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float-particle linear infinite;
+  z-index: 0;
+}
+
+/* ───── Launch Button ───── */
+.launch-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.launch-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    rgba(176, 140, 30, 0.3) 10%,
+    transparent 20%
+  );
+  animation: rotate-border 3s linear infinite;
+}
+
+.launch-btn::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: linear-gradient(135deg, rgba(92, 18, 18, 0.95), rgba(58, 8, 8, 0.95));
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.launch-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(176, 140, 30, 0.35), 0 0 80px rgba(176, 140, 30, 0.15);
+}
+
+.launch-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes rotate-border {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ───── Scrollbar Styling ───── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8a6310;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b08c1e;
+}
+
+/* ───── Digital Books Page ───── */
+.books-grid-card {
+  transition: all 0.4s ease;
+  border: 1px solid rgba(176, 140, 30, 0.2);
+}
+
+.books-grid-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: rgba(176, 140, 30, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(176, 140, 30, 0.15);
+}
