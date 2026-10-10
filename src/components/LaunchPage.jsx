@@ -213,7 +213,7 @@ export default function LaunchPage({ onLaunch }) {
             className="text-xs sm:text-sm md:text-base text-stone-800 font-semibold mt-0.5"
             style={{ fontFamily: 'var(--font-cormorant)' }}
           >
-            Director, Indian Institute of Advanced Study
+            Hon'ble Director, Indian Institute of Advanced Study
           </p>
         </div>
 
